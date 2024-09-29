@@ -73,18 +73,16 @@ The root command provides the main interface to the tool, allowing you to fetch 
 Fetch articles from a specified portal.
 
 ```bash
-querylyctl news fetch --portal-id [PORTAL_ID] --page [PAGE_NUMBER] --limit [ARTICLE_LIMIT]
+querylyctl news fetch --portal-id [PORTAL_ID]  
 ```
 
 **Flags**:
-- `--portal-id`: The ID of the portal to fetch articles from (required).
-- `--page`: The page number to navigate (default is `1`).
-- `--limit`: The number of articles to fetch (default is `10`).
-- `--sort-by-date`: Sort articles by date (default is `0`).
+- `--id`: The ID of the portal to fetch articles from (required).
+- `--end-index`: The page number to navigate (default is `1`).
+- `--batch-size`: The number of articles to fetch (default is `10`).
 - `--section`: Fetch articles from a specific section.
 - `--query`: Search for a specific term.
-- `--end-index`: Set the end index of the request (default is `0`).
-- `--out-subdir`: Save results inside a new directory.
+- `--out`: Save results inside a new directory.
 
 #### `display-ids`
 Display available portal IDs for fetching.
@@ -132,10 +130,10 @@ If no configuration file is provided, the tool will prompt you to enter settings
 
 ## Example
 
-Fetch articles from a portal using the following command:
+Fetch articles from all portals using the following command:
 
 ```bash
-querylyctl articles --cfg ./cfg.json  fetch --id "123" --limit 5 --sort-by-date 1 --section "Technology"
+querylyctl articles --cfg ./cfg.json  fetch --id="all" --end-index 5 ---section "Technology"
 ```
 
 This will fetch the 5 most recent technology articles from portal ID "123".
