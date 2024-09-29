@@ -1,5 +1,5 @@
 
-# News Scraper CLI Tool
+# Queryly CLI Tool
 
 ## Overview
 
