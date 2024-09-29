@@ -31,7 +31,6 @@ ln -s /path/to/binary /usr/local/bin/querylyctl
 ```
 
 ### Makefile installation
-Here is the documentation for the `build-run` and `build` targets from the `Makefile`:
 
 ### `build`
 Runs the entire build process, including setting up directories, compiling the code, compressing the binaries, and cleaning up temporary files.
@@ -269,8 +268,7 @@ Each object in the registry array defines the parameters required to scrape a sp
 }
 ```
 
-This JSON configuration defines a "master" scraper that saves collected data to `~/collected/`. The scraper will target a website at `https://website_to_scrape.com/`, using a specific CSS selector to extract articles. The scraping process for this site is enabled and will overwrite any existing news items already stored.
-## Contributing
+ ## Contributing
 
 Contributions are welcome! Feel free to submit a pull request or open an issue for bug reports, feature requests, or improvements.
 
