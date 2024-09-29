@@ -90,18 +90,18 @@ querylyctl news fetch --portal-id [PORTAL_ID] --page [PAGE_NUMBER] --limit [ARTI
 Display available portal IDs for fetching.
 
 ```bash
-querylyctl news display-ids
+querylyctl  --cfg ./cfg.json    articles --ids
 ```
 
 #### `display-options`
 Display available scraping options for a specific portal.
 
 ```bash
-querylyctl news display-options --portal-id [PORTAL_ID]
+querylyctl articles --cfg ./cfg.json   options --id [PORTAL_ID]
 ```
 
 **Flags**:
-- `--portal-id`: The ID of the portal to display options for (required).
+- `--id`: The ID of the portal to display options for (required).
 
 #### `cron`
 Manage scheduled scraping tasks (requires additional setup).
@@ -125,7 +125,7 @@ querylyctl version
 The tool uses a configuration file for some operations. You can specify the file path using the `--config` flag:
 
 ```bash
-querylyctl --config /path/to/config.yaml
+querylyctl --cfg ./cfg.json 
 ```
 
 If no configuration file is provided, the tool will prompt you to enter settings.
@@ -135,7 +135,7 @@ If no configuration file is provided, the tool will prompt you to enter settings
 Fetch articles from a portal using the following command:
 
 ```bash
-querylyctl news fetch --portal-id "123" --limit 5 --sort-by-date 1 --section "Technology"
+querylyctl articles --cfg ./cfg.json  fetch --id "123" --limit 5 --sort-by-date 1 --section "Technology"
 ```
 
 This will fetch the 5 most recent technology articles from portal ID "123".
