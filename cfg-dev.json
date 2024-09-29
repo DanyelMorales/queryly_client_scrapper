@@ -2,87 +2,19 @@
   "roboto": {
     "mode": "master",
     "scrapperConfig": {
-      "outputPath": "~/Projects/MLP/FEM/collected_news/"
+      "outputPath": "~/collected/"
     },
     "registry": [
       {
-        "Context": "RadioFormulaDeportes",
+        "Context": "NameOfTheSide",
         "Enabled": true,
         "Type": 0,
-        "Host": "https://futbol.radioformula.com.mx/",
-        "ApiKey": "b92856066bea44a5",
-        "Selector": ".article-content--cuerpo",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "Panorama",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://www.panoramaweb.com.mx/",
-        "ApiKey": "32fa6c3afda546f4",
-        "Selector": ".layout-article-body",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "LaNacionAr",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://www.lanacion.com.ar/",
-        "ApiKey": "8075c0c1c4c44847",
-        "Selector": ".cuerpo__nota",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "ElImparcial",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://www.elimparcial.com/",
-        "ApiKey": "b82d899231ed46ba",
-        "Selector": ".article-body",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "ElPaisCo",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://www.elpais.com.co/",
-        "ApiKey": "90ca15cd05a84124",
-        "Selector": ".Article",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "sdpnoticias",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://www.sdpnoticias.com/",
-        "ApiKey": "d2255b6ef3ab4cb9",
-        "Selector": ".content-story section",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "ElFinanciero",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://www.elfinanciero.com.mx/",
-        "ApiKey": "327f7c9cf1384818",
-        "Selector": ".article-body-wrapper",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "ElUniversal",
-        "Enabled": true,
-        "Type": 0,
-        "Host": "https://eluniversal.com.mx",
-        "ApiKey": "000ca78dce0f4c6b",
-        "Selector": ".content-story section",
-        "OverrideExistingNews": true
-      },
-      {
-        "Context": "animalPolitico",
-        "Enabled": true,
-        "Type": 1,
+        "Host": "https://website_to_scrape.com/",
+        "ApiKey": "queryly_API_KEY",
+        "Selector": ".article-custom-selector",
         "OverrideExistingNews": true
       }
     ]
   }
+
 }

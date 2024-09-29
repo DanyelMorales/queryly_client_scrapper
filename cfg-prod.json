@@ -1,31 +1,20 @@
 {
   "roboto": {
-    "mode": "master"
-  },
-  "wp": {
-    "URL": "https://menosproductosnocivosentuvida.com",
-    "key": "ck_4ba5f5e5bce6f49049e77bc558a0576930ab358d",
-    "secret": "cs_803c5817ecef3b19e8df9585b6b917b811d544b1"
-  },
-  "target": {
-    "URL": "https://shop.foreverliving.com/retail/entry/Shop.do?store=%s&language=%s&distribID=%s&%s",
-    "language": "es",
-    "country": "MEX",
-    "id": "520003003158",
-    "pages": {
-      "newProducts": "categoryName=NewProductsR&task=shopCategory"
+    "mode": "master",
+    "scrapperConfig": {
+      "outputPath": "~/collected/"
     },
-    "externalValidations": {
-      "host": "http://localhost/v1/foreverliving",
-      "shipping": "shipping",
-      "outOfStock": "cart/stock"
-    }
-  },
-  "db": {
-    "host": "10.124.0.3",
-    "port": "21019",
-    "user": "bigoroboto",
-    "password": "$ys73xrvb1g0",
-    "schema": "flv_price_checker"
+    "registry": [
+      {
+        "Context": "NameOfTheSide",
+        "Enabled": true,
+        "Type": 0,
+        "Host": "https://website_to_scrape.com/",
+        "ApiKey": "queryly_API_KEY",
+        "Selector": ".article-custom-selector",
+        "OverrideExistingNews": true
+      }
+    ]
   }
+
 }
