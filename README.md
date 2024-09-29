@@ -73,7 +73,7 @@ The root command provides the main interface to the tool, allowing you to fetch 
 Fetch articles from a specified portal.
 
 ```bash
-querylyctl news fetch --portal-id [PORTAL_ID]  
+querylyctl articles fetch --portal-id [PORTAL_ID]  
 ```
 
 **Flags**:
