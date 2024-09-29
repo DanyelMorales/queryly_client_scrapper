@@ -1,0 +1,20 @@
+{
+  "roboto": {
+    "mode": "master",
+    "scrapperConfig": {
+      "outputPath": "~/collected/"
+    },
+    "registry": [
+      {
+        "Context": "NameOfTheSide",
+        "Enabled": true,
+        "Type": 0,
+        "Host": "https://website_to_scrape.com/",
+        "ApiKey": "queryly_API_KEY",
+        "Selector": ".article-custom-selector",
+        "OverrideExistingNews": true
+      }
+    ]
+  }
+
+}
