@@ -139,9 +139,9 @@ querylyctl articles --cfg ./cfg.json  fetch --id="all" --end-index 5 ---section 
 This will fetch the 5 most recent technology articles from portal ID "123".
 
 
-## JSON Configuration
+## Configuration file
 
-This JSON configuration file defines settings for a scraper named "roboto" that is designed to collect and store information from specified websites. It includes the operating mode, paths for storing data, and registry configurations for different websites to scrape.
+This JSON configuration file defines settings for the cli tool that is designed to collect and store information from specified websites. It includes the operating mode, paths for storing data, and registry configurations for different websites to scrape.
 
 ### Structure
 
@@ -153,20 +153,7 @@ The configuration is organized as follows:
     - `registry`: A list of sites with individual configurations for scraping.
 
 ---
-
-### `roboto`
-
-#### `mode` (String)
-- **Description**: Specifies the operating mode of the scraper.
-- **Allowed Values**:
-    - `"master"`: This mode indicates that the scraper is running as the primary instance.
-- **Example**:
-  ```json
-  "mode": "master"
-  ```
-
-#### `scrapperConfig` (Object)
-- **Description**: Contains configurations related to the scraping operations.
+ 
 
 ##### `outputPath` (String)
 - **Description**: Specifies the path where the scraped data will be stored.
@@ -203,7 +190,7 @@ Each object in the registry array defines the parameters required to scrape a sp
 #### `Type` (Integer)
 - **Description**: Indicates the type of scraper to use for this website. This could represent different scraping methods or strategies, based on internal definitions.
 - **Allowed Values**:
-    - `0`: Could represent a standard scraping type.
+    - `0`: Queryly
 - **Example**:
   ```json
   "Type": 0
