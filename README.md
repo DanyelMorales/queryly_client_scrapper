@@ -14,7 +14,7 @@ This CLI tool fetches news articles in bulk from different journal sources, prov
 - **Health check**: Perform a health check on the tool.
 - **Version command**: Check the current version of the scraper.
 
-## Installation
+## Manual Installation
 
 1. Clone the repository and navigate to the project folder.
 2. Install the necessary dependencies using Go.
@@ -27,15 +27,43 @@ go build
 3. Add the binary to your `$PATH` or create a symbolic link for easy access:
 
 ```bash
-ln -s /path/to/binary /usr/local/bin/news-scrapper
+ln -s /path/to/binary /usr/local/bin/querylyctl
 ```
+
+### Makefile installation
+Here is the documentation for the `build-run` and `build` targets from the `Makefile`:
+
+### `build`
+Runs the entire build process, including setting up directories, compiling the code, compressing the binaries, and cleaning up temporary files.
+
+```bash
+make build
+```
+
+**Process:**
+1. **Setup**: Creates the necessary directories (`build` and `bin`).
+2. **Compile**: Downloads dependencies, sets version information, compiles the Go source code, and prepares the binary.
+3. **Compress**: Packages the binary and dependencies into a `.tar.xz` file, generates an installer, and compresses it into a `.zip` file.
+4. **Clean**: Removes temporary build files after the process is completed.
+
+### `build-run`
+Combines the `build` and `install` steps, then runs the CLI tool's version command to verify that the tool was successfully installed.
+
+```bash
+make build-run
+```
+
+**Process:**
+1. Executes the `build` target to compile and package the tool.
+2. Installs the tool by running the `setup.sh` script.
+3. Runs the tool to display the current version.
 
 ## Usage
 
 ### Root Command
 
 ```bash
-news-scrapper [command] [flags]
+querylyctl [command] [flags]
 ```
 
 The root command provides the main interface to the tool, allowing you to fetch articles, display portal IDs, and access other features.
@@ -46,7 +74,7 @@ The root command provides the main interface to the tool, allowing you to fetch 
 Fetch articles from a specified portal.
 
 ```bash
-news-scrapper news fetch --portal-id [PORTAL_ID] --page [PAGE_NUMBER] --limit [ARTICLE_LIMIT]
+querylyctl news fetch --portal-id [PORTAL_ID] --page [PAGE_NUMBER] --limit [ARTICLE_LIMIT]
 ```
 
 **Flags**:
@@ -63,14 +91,14 @@ news-scrapper news fetch --portal-id [PORTAL_ID] --page [PAGE_NUMBER] --limit [A
 Display available portal IDs for fetching.
 
 ```bash
-news-scrapper news display-ids
+querylyctl news display-ids
 ```
 
 #### `display-options`
 Display available scraping options for a specific portal.
 
 ```bash
-news-scrapper news display-options --portal-id [PORTAL_ID]
+querylyctl news display-options --portal-id [PORTAL_ID]
 ```
 
 **Flags**:
@@ -83,14 +111,14 @@ Manage scheduled scraping tasks (requires additional setup).
 Run a health check to verify the tool's functionality.
 
 ```bash
-news-scrapper health-check
+querylyctl health-check
 ```
 
 #### `version`
 Display the current version of the tool.
 
 ```bash
-news-scrapper version
+querylyctl version
 ```
 
 ## Configuration
@@ -98,7 +126,7 @@ news-scrapper version
 The tool uses a configuration file for some operations. You can specify the file path using the `--config` flag:
 
 ```bash
-news-scrapper --config /path/to/config.yaml
+querylyctl --config /path/to/config.yaml
 ```
 
 If no configuration file is provided, the tool will prompt you to enter settings.
@@ -108,7 +136,7 @@ If no configuration file is provided, the tool will prompt you to enter settings
 Fetch articles from a portal using the following command:
 
 ```bash
-news-scrapper news fetch --portal-id "123" --limit 5 --sort-by-date 1 --section "Technology"
+querylyctl news fetch --portal-id "123" --limit 5 --sort-by-date 1 --section "Technology"
 ```
 
 This will fetch the 5 most recent technology articles from portal ID "123".
