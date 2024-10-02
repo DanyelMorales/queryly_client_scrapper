@@ -10,8 +10,8 @@ This CLI tool fetches news articles in bulk from different journal sources, prov
 - **Fetch articles**: Scrape and download articles from various online journal portals.
 - **Display available IDs**: List the portal IDs available for scraping.
 - **Display options**: View scraping options for specific portals.
-- **Cron support**: Manage periodic scraping tasks.
-- **Health check**: Perform a health check on the tool.
+- **Cron support**: Manage periodic scraping tasks. (it's available but we are still documenting it)
+- **Health check**: Perform a health check on the tool. (it's available but we are still documenting it)
 - **Version command**: Check the current version of the scraper.
 
 ## Manual Installation
@@ -82,7 +82,7 @@ querylyctl articles fetch --portal-id [PORTAL_ID]
 - `--batch-size`: The number of articles to fetch (default is `10`).
 - `--section`: Fetch articles from a specific section.
 - `--query`: Search for a specific term.
-- `--out`: Save results inside a new directory.
+- `--out`: Save results inside a new subdirectory.
 
 #### `display-ids`
 Display available portal IDs for fetching.
