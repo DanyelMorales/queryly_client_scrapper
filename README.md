@@ -83,6 +83,7 @@ querylyctl articles fetch --portal-id [PORTAL_ID]
 - `--section`: Fetch articles from a specific section.
 - `--query`: Search for a specific term.
 - `--out`: Save results inside a new subdirectory.
+- `--date`: sort the search by Date, values: (last-week, today, last-month).
 
 #### `display-ids`
 Display available portal IDs for fetching.
