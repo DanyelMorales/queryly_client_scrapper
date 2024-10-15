@@ -85,7 +85,7 @@ func FetchCmd() *cobra.Command {
 	cmd.Flags().Int(config2.ActionLimitBatchSize, 10, "the number of articles to fetch")
 	_ = viper.BindPFlag(config2.ActionLimitBatchSize, cmd.Flags().Lookup(config2.ActionLimitBatchSize))
 
-	cmd.Flags().String(config2.ActionLimitSortByDate, "0", "sort the search by Date")
+	cmd.Flags().String(config2.ActionLimitSortByDate, "today", "sort the search by Date, values: (last-week, today, last-month)")
 	_ = viper.BindPFlag(config2.ActionLimitSortByDate, cmd.Flags().Lookup(config2.ActionLimitSortByDate))
 
 	cmd.Flags().String(config2.ActionSectionFlag, "", "Fetch an specific section from the website")

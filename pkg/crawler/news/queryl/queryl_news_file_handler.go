@@ -3,6 +3,7 @@ package queryl
 import (
 	"fmt"
 	"news_scrapper/pkg/crawler/news"
+	"news_scrapper/pkg/style"
 )
 
 type Handler struct {
@@ -17,6 +18,12 @@ type FakingTheFunk struct {
 	Enabled                         bool
 	Context, Host, ApiKey, Selector string
 	OverrideExistingNews            bool
+}
+
+var ValidSortDate = map[string]int{
+	"last-week":  168,
+	"today":      24,
+	"last-month": 720,
 }
 
 func TriggerBatchScrapping(opts []FakingTheFunk, action BatchAction) {
@@ -40,9 +47,16 @@ func NewQuerylFileHandler(context, host, apiKey, selector string, overrideExisti
 	return Handler{Client: client}
 }
 
-func (q Handler) Scrape(mode SearchMode, value string, dateSort int, batchSize int) {
+func (q Handler) Scrape(mode SearchMode, value string, dateSort string, batchSize int) {
+	var dateSortVal = 0
+	if value, exists := ValidSortDate[dateSort]; exists {
+		dateSortVal = value
+	} else {
+		style.ExitActionF("invalid sort value: %v", dateSort)
+		return
+	}
 	go q.processArticles()()
-	q.Client.Scrape(mode, value, dateSort, batchSize)
+	q.Client.Scrape(mode, value, dateSortVal, batchSize)
 }
 
 func (q Handler) FetchMeta() (*Faceted, error) {

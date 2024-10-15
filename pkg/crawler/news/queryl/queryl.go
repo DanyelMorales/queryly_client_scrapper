@@ -86,6 +86,7 @@ func (newsClient *Queryl) fetchArticlesByTerm(term string, dateSort int, batchSi
 	newsClient.appendFacet("pubDate", strconv.Itoa(dateSort), queryParams)
 	newsClient.appendFacet("query", "", queryParams)
 	(*queryParams)["query"] = term
+	(*queryParams)["sort"] = "date"
 	return newsClient.fetchArticleLinks(*queryParams)
 }
 
@@ -115,6 +116,7 @@ func (newsClient *Queryl) fetchArticlesBySection(section string, dateSort int, b
 	queryParams := BuildQueryParams(newsClient.ApiKey, strconv.Itoa(0), strconv.Itoa(batchSize))
 	newsClient.appendFacet("section", section, queryParams)
 	newsClient.appendFacet("pubDate", strconv.Itoa(dateSort), queryParams)
+	(*queryParams)["sort"] = "date"
 	style.OnActionF("[%V] about to invoke Article endpoint", newsClient.Context)
 	return newsClient.fetchArticleLinks(*queryParams)
 }
