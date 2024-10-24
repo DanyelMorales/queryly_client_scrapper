@@ -137,9 +137,29 @@ Fetch articles from all portals using the following command:
 querylyctl articles --cfg ./cfg.json  fetch --id="all" --end-index 5 ---section "Technology"
 ```
 
-This will fetch the 5 most recent technology articles from portal ID "123".
+Scrape articles from all portals, fetching only 4 articles for each portal, matching the keyword in the query flag
+with a creation date of today.
 
+```bash
+newsctl articles --cfg ./cfg.json --id=all  fetch --batch-size=4 --query="keysearch" --date=today
+```
+Scrape articles from all portals, fetching only 4 articles for each portal, matching the keyword in the query flag
+with a creation date of last week.
 
+```bash
+newsctl articles --cfg ./cfg.json --id=all  fetch --batch-size=4 --query="keysearch" --date=last-week
+```
+Scrape articles from all portals, fetching only 4 articles for each portal, matching the keyword in the query flag
+with a creation date of last month.
+
+```bash
+newsctl articles --cfg ./cfg.json --id=all  fetch --batch-size=4 --query="keysearch" --date=last-month
+```
+Scrape articles from website1,website2,website3 portals; fetching only 4 articles for each portal, and matching the keyword in the query flag
+with a creation date of last month.
+```bash
+newsctl articles --cfg ./cfg.json  --id="website1,website2,website3"  fetch --batch-size=4 --query="keyword" --date=last-week --out="./"
+```
 ## Configuration file
 
 This JSON configuration file defines settings for the cli tool that is designed to collect and store information from specified websites. It includes the operating mode, paths for storing data, and registry configurations for different websites to scrape.
